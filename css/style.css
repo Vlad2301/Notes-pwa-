@@ -1,0 +1,180 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Main container */
+.main-container {
+    display: flex;
+    margin: 140px 20px 80px 20px;
+
+    flex-direction: column;
+    position: relative;
+}
+
+.main-container.deactive {
+    display: none;
+}
+
+/* .main-container {
+    display: none;
+} */
+
+.container__title {
+    text-align: center;
+    font-size: 22px;
+
+    margin-bottom: 50px;
+}
+
+.container__note {
+    margin-bottom: 20px;
+    padding: 10px;
+    position: relative;
+
+    border: solid 1px rgba(137, 149, 158, 0.2);
+    border-radius: 5px;
+    box-shadow: #89959e 2px 2px 3px;
+
+    cursor: pointer;
+}
+
+.note__title {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.note__date {
+    color: #333c43;
+}
+
+.delete-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+
+    color: #333c43;
+
+    transform: translate(-50%, -50%);
+}
+
+.delete-icon:hover{
+    color: #000000;
+}
+
+
+.add-icon-block {
+    width: 50px;
+    height: 50px;
+
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: solid 1px rgba(137, 149, 158, 0.2);
+    border-radius: 50%;
+    box-shadow: 2px 2px 3px #829bad;
+
+    background-color: #d3dee6;
+    cursor: pointer;
+}
+
+
+/* Edit note */
+.edit-note {
+    padding: 20px;
+
+    display: none;
+
+    flex-direction: column;
+}
+
+.edit-note.active {
+    display: flex;
+}
+
+.edit__header::after {
+    content: '';
+    display: block;
+
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    width: 100%;
+    height: 3px;
+    background-color: rgba(130, 142, 152, 0.7);
+}
+
+
+.arrow-back-icon {
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.edit__title {
+    font-size: 36px;
+    font-weight: 500;
+
+    width: 80%;
+
+    border: none;
+    outline: none;
+}
+
+.edit__content {
+    height: 100%;
+
+    font-size: 24px;
+    border: none;
+
+    resize: none;
+}
+
+.edit__content:focus {
+    outline: none;
+}
+
+/* Install screen */
+/* .installation-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.installation-screen img {
+    display: block;
+    width: 50%;
+}
+
+.installation-screen p {
+    text-align: center;
+}
+
+
+.material-icons {
+    font-size: 50px;
+}
+
+@media all and (display-mode: fullscreen) {
+    .installation-screen {
+        display: none;
+    }
+
+    .main-container {
+        display: flex;
+    }
+} */
