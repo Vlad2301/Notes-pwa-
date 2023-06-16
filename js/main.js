@@ -16,7 +16,6 @@ const onLoad = () => {
 
     notesCount.innerText = noteList.length;
 
-    console.log(noteList);
     if (noteList) {
         noteList.map(el => containerNotes.appendChild(createNewNoteHTML(el.id, el.title, el.date)));
     }
@@ -84,7 +83,7 @@ const createNewNote = () => {
 
 const arrowBackClick = () => {
     saveNote();
-    
+
     editNoteContainer.classList.toggle('active');
     mainContainer.classList.toggle('deactive');
 
@@ -122,13 +121,14 @@ arrowBack.addEventListener('click', arrowBackClick);
 
 addNoteIcon.addEventListener('click', addNoteClick);
 
-/* window.addEventListener('beforeinstallprompt',(e)=>{
-    e.preventDefault();
-    installPrompt = e;
+
+window.addEventListener('load', async () => {
+    if (navigator.serviceWorker) {
+        try {
+            await navigator.serviceWorker.register('../sw.js');
+            console.log('Service worker register success');
+        } catch (e) {
+            console.log('Service worker register fail');
+        }
+    }
 });
-
-installIcon.addEventListener('click', e =>{
-    installPrompt.prompt();
-})
- */
-
